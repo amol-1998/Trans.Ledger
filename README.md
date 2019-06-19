@@ -1,0 +1,2 @@
+# Trans.Ledger
+Trans.Ledger is an Immutable, Distributed and Decentralized Ledger for recording transactions of donations/funding to political parties. Such a ledger ensure the security of the transactions and assures the donors that their donation amounts are the same as they transacted. And the major advantage of Blockchain Technology in this application is that the transactions of donations/funding are Public
