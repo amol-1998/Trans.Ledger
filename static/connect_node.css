@@ -1,0 +1,36 @@
+form{
+	display:block;
+	margin-top:160px;
+	margin-bottom:25px;
+}
+form input{
+	display:block;
+	outline:none;
+	letter-spacing:1px;
+	width:60%;
+	margin-left:20%;
+	padding:20px;
+	font-size:17px;
+	font-family:calibri;
+	border-radius:5px;
+	border:2px solid rgba(0,0,0,0.3);
+}
+form input[type='text']:focus{
+	border:2px solid #444;
+}
+form input[type='submit']{
+	background:#1f1f1f;
+	cursor:pointer;
+	margin-top:75px;
+	color:white;
+	width:30%;
+	margin-left:35%;
+	margin-bottom:100px;
+	padding:25px;
+	transition:all 0.25s;
+	font-size:22px;
+}
+form input[type='submit']:hover{
+	box-shadow:1px 3px 15px 4px rgba(30,30,30,0.3);
+	background:#191919;
+}

@@ -1,0 +1,114 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	font-family:calibri;
+}
+#panel{
+	width:100%;
+	margin-top:50px;
+	margin-bottom:75px;
+	overflow:auto;
+	overflow-y:hidden;
+}
+#chainc{
+	padding:10px 15px;
+	overflow:hidden;
+	min-width: 100%;
+	height:450px;
+	margin-bottom:10px;
+}
+/*Styling the Scrollbar*/
+#panel::-webkit-scrollbar {
+    width: 10px;
+}
+#panel::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 3px 10px rgba(0,0,0,0.5);
+	background:#1f1f1f;
+}
+#panel::-webkit-scrollbar-thumb {
+  background-color: #0853F9;
+  -webkit-box-shadow: inset 0 0 5px 2px rgba(0,0,0,0.5);
+  border-radius:px;
+}
+.block{
+	float:left;
+	width:450px;
+	border-radius:5px;
+	box-shadow:1px 2px 10px 3px rgba(0,0,0,0.15);
+	background:#1f1f1f;
+	padding:15px;
+	height:100%;
+}
+.block .keys{
+	display:flex;
+	float:left;
+	height:100%;
+	flex-direction:column;
+	width:30%;
+}
+.block .values{
+	display:block;
+	float:right;
+	height:100%;
+	width:68%;
+}
+.block ul.keys li{
+	color:white;
+	font-family:calibri;
+	font-size:18px;
+	text-align:left;
+	font-weight:bold;
+	margin-bottom:25px;
+	border:1px solid transparent;
+	display:block;
+	padding:10px;
+	padding-left:0;
+}
+.block ul.values li{
+	border:1px solid transparent;
+	box-shadow:inset 1px 2px 5px 2px rgba(0,0,0,0.5);
+	background:#f5f5f5;
+	color:#333;
+	border-radius:10px;
+	padding:10px;
+	font-size:18px;
+}
+.values li input{
+	box-shadow:inset 1px 2px 8px 2px rgba(0,0,0,0.5);
+	outline:none;
+	width:100%;
+	display:block;
+	border:0;
+	background:#f5f5f5;
+	color:#333;
+	border-radius:10px;
+	padding:10px;
+	font-size:18px;
+}
+.index{
+	margin-top:0px;
+}
+.timestamp{
+	margin-top:25px;
+}
+.proof{
+	margin-top:25px;
+}
+.hash{
+	margin-top:25px;
+}
+.transaction{
+	overflow:auto;
+	margin-top:25px;
+}
+.transaction p{
+	margin-bottom:5px;
+}
+.link{
+	float:left;
+	width:75px;
+	height:20px;
+	margin-top:215px;
+	background:#1f1f1f;
+}

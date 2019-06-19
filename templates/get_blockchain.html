@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Trans.Ledger - View Blockchain</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="/static/index.css">
+		<link rel="stylesheet" type="text/css" href="/static/get_blockchain.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('#user').click(function(){
+					$('#dropdoptions').slideToggle(350);
+				});
+			});
+		</script>
+	
+	</head>
+	
+	<body>
+		<div>
+			<header>
+				<div class="lcont">
+					<a href="/"><img src="/static/logo.png"></a>
+					<h1>TRANS.LEDGER</h1>
+				</div>
+				<div class="rcont">
+					<a id="user" href="javascript:void(0);">{{username}} <span class=" fa fa-angle-down"></span></a>					
+				</div>
+				<div id="dropdoptions">
+						<ul>
+							<li><a href="add_transaction">Add Transaction</a></li>
+							<li><a href="connect_node">Connect a Node</a></li>
+							<li><a href="get_transactions">View Transactions</a></li>
+							<li><a href="get_blockchain">View Blockchain</a></li>
+							<li><a href="logout" style="border-bottom:0;">Logout</a></li>
+						</ul>
+				</div>
+			</header>
+		
+			<div id="panel">
+				<div id="chainc" style="width: {{525*length - 45}}px;">
+                    {% for b in chain %}
+					<div class="block">
+						<ul class="keys">
+							<li>Index:</li>
+							<li>Timestamp:</li>
+							<li>Proof:</li>
+							<li>Previous Hash:</li>
+							<li>Transactions:</li>
+						</ul>
+						<ul class="values">
+							<li class="index">{{ b['index'] }}</li>
+							<li class="timestamp">{{ b['timestamp'] }}</li>
+							<li class="proof">{{ b['proof'] }}</li>
+							<li class="hash" style="padding:0;"><input type="text" disabled value="{{ b['previous_hash'] }}"></li>
+							{% for transaction in b['transactions'] %}
+                            <li class="transaction">
+								<p><b>Sender:</b> {{ transaction['sender'] }}<p>
+								<p><b>Receiver:</b> {{ transaction['receiver'] }}</p>
+								<p><b>Amount:</b> {{ transaction['amount'] }}</p>
+							</li>
+                            {% endfor %}
+						</ul>
+					</div>
+                    {% if b['index'] != length %}
+					<div class="link"></div>
+                    {% endif %}
+                {% endfor %}
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		<footer>
+			<h1>TRANS.LEDGER</h1>
+			<h2>About</h2>
+			<p>Trans.Ledger is an Immutable, Distributed and Decentralized Ledger for recording transactions of funding to political parties. Such a ledger ensure the security of the transactions and assures the donors that their donation amounts are the same as they transacted. And the major advantage of Blockchain Technology in this application is that the transactions of fundings are Public i.e. anyone can see Who donated, to Whom, and How much? Such a ledger can be seen by everyone but modified by none.</p>
+			<h2>Connect</h2>
+			<div id="sicons">
+					<a href="#" style="padding:12px 0px 0px  16px;"><span class="fa fa-facebook"></span></a>
+					<a href="#" style="padding:11px 0px 0px 12px;"><span class="fa fa-instagram"></span></a>
+					<a href="#" style="padding:12px 0px 0px 12px;"><span class="fa fa-twitter"></span></a>
+					<a href="#" style="padding:11px 0px 0px 13px;"><span class="fa fa-github"></span></a>
+			</div>
+		</footer>
+	</body>
+</html>

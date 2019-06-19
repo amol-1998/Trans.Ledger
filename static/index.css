@@ -1,0 +1,377 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+@font-face{
+	src:url('/static/Fonts/disco.ttf');
+	font-family:disco;
+}
+@font-face{
+	src:url('/static/Fonts/Casper.ttf');
+	font-family:casper;
+}
+@font-face{
+	src:url('/static/Fonts/wwh.ttf');
+	font-family:wwh;
+}
+@font-face{
+	src:url('/static/Fonts/login.ttf');
+	font-family:login;
+}
+body, html{
+	width:100%;
+	height:100%;
+	overflow:auto;
+}
+a{
+	text-decoration:none;
+}
+.fp{
+	min-height:100%;
+	overflow:hidden;
+}
+ul,ol{
+	list-style-type:none;
+}
+#frontp{
+	position:relative;
+	z-index:10;
+}
+#frontp:before{
+	content:'';
+	position:absolute;
+	top:-45%;
+	left:-15%;
+	border-radius:100px;
+	width:40%;
+	height:150%;
+	background:linear-gradient(45deg,#02AAB0,#00CDAC);
+	background:url('tb1.png') no-repeat;
+	background-position:center;
+	border:1px solid rgba(0,0,0,0.25);
+	background-size:cover;
+	box-shadow:1px 2px 10px 2px rgba(0,0,0,0.35);
+	transform:rotate(45deg);
+	z-index:-1;	
+}
+header{
+	position:relative;
+	height:100px; /*SAME*/
+	padding:0 15px;
+}
+header .lcont{
+	display:block;
+	float:left;
+	width:70%;
+}
+header .lcont img{
+	box-shadow:0 2px 5px 0 rgba(0,0,0,0.3);
+	height:64px;
+	margin-top:16px;
+	display:block;
+	border-radius:10px;
+	float:left;
+}
+header .lcont img:hover{
+	box-shadow:0 2px 5px 0 rgba(0,0,0,0.6);
+}
+header .lcont h1{
+	font-size:64px;
+	margin-top:13px;
+	font-family:disco;
+	color:#363636;
+	float:left;
+	padding-left:5px;
+	letter-spacing:6px;
+}
+header .rcont{
+	width:30%;
+	margin-top:35px;
+	overflow:auto;
+	float:right;
+}
+header .rcont a{
+	letter-spacing:1px;
+	font-size:22px;
+	font-family:calibri;
+	display:inline-block;
+	float:right;
+	color:#46BDE6;
+	text-shadow:1px 1px 3px rgba(0,0,0,0.1);
+}
+header .rcont a:hover{
+	color:#0853F9;	
+}
+#dropdoptions{
+	display:none;
+	position:absolute;
+	top:100px;
+	right:15px;
+	background:white;
+}
+#dropdoptions ul{
+	display:block;
+	padding:0;
+	border:1px solid rgba(0,0,0,0.25);
+}
+#dropdoptions ul li{
+	display:block;	
+}
+#dropdoptions ul li a{
+	border-bottom:1px solid rgba(0,0,0,0.25);
+	border-left:7px solid transparent;
+	padding:15px 70px 15px 10px;
+	display:block;
+	font-size:19px;
+	font-family:calibri;
+	color:black;
+}
+#dropdoptions ul li a:hover{
+	border-left:7px solid black;
+}
+#dropdoptions ul li a[href='logout']:hover{
+	color:#CA150D;
+}
+.hpc{
+	padding:0 0 0 15px;
+}
+.mtc{
+	width:55%;
+	float:left;
+	display:block;
+}
+.mtc h1{
+	font-family:casper;
+	color:#111;
+	text-shadow:1px 2px 3px rgba(0,0,0,0.2);
+	margin-top:40px;
+	font-size:75px;
+	letter-spacing:5px;
+}
+.mic{
+	width:45%;
+	float:right;
+	display:block;
+}
+.mic img{
+	max-height:550px;
+}
+#qc{
+	min-height:500px;
+	margin-bottom: 75px;
+}
+#qc h1{
+	font-family:wwh;
+	font-size:95px;
+	letter-spacing:3px;
+	text-align:center;
+	margin-top:150px;
+	margin-bottom:45px;
+}
+#qc p{
+	width:60%;
+	margin-left:20%;
+	padding:20px;
+	font-family:calibri;
+	font-size:22px;
+	letter-spacing:1px;
+	border-radius:25px 0 25px 0;
+	background:linear-gradient(to right,#FFEFBA,#fff);
+	border:1px solid rgba(0,0,0,0.0.5);
+	box-shadow:1px 2px 10px 4px rgba(0,0,0,0.05);
+}
+#qc p span.fa{
+	font-size:15px;
+}
+#qc p span.fa-quote-left{
+	font-size:45px;
+}
+#qn{
+	display:inline-block;
+	margin-top:15px;
+	margin-bottom:100px;
+	padding:15px;
+	font-size:19px;
+	text-transform:uppercase;
+	font-weight:bold;
+	width:60%;
+	margin-left:20%;
+	text-align:right;
+}
+/*LOGIN SEC STARTS*/
+#loginc{
+	background:white;
+	background:url('lb1.png') no-repeat;
+	background-size:80%;
+	background-position:center;
+	z-index:1;
+	position:relative;
+}
+
+#loginc form{
+	border-radius:10px;
+	box-shadow:1px 2px 20px 4px rgba(0,0,0,0.25);
+	background:url('formback.jpg') no-repeat;
+	background-size:cover;
+	background-position:top;
+	display:block;
+	width:35%;
+	margin-left:32.5%;
+	margin-top:25px;
+	margin-bottom:50px;
+	border:2px solid #333;
+}
+#loginc form div{
+	border:1px solid transparent; /*IMP*/
+	height:100%;
+	background:rgba(0,15,85,0.25);
+}
+#loginc h1{
+	color:#fff;
+	text-align:center;
+	padding:5px;
+	font-family:login;
+	font-size:60px;
+	margin-top:35px;
+	margin-bottom:75px;
+}
+#loginc form input{
+	background:rgba(0,0,0,0.65);
+	color:white;
+	font-weight:bold;
+	border-radius:5px;
+	padding:18px;
+	display:block;
+	font-size:17px;
+	border:2px solid black;
+	outline:none;
+	font-family:calibri;
+	width:90%;
+	margin:45px 5% 30px 5%;
+}
+#loginc form input:focus{
+	background:rgba(0,0,0,0.85);
+}
+#error{
+	font-size:17px;
+	font-weight:bold;
+	text-shadow:1px 1px 3px rgba(200,10,10,0.3);
+	height:40px;
+	font-family:calibri;
+	text-align:center;
+	color:#F6240B;
+}
+#loginc button{
+	border:0;
+	width:60%;
+	letter-spacing:2px;
+	padding:24px;
+	font-weight:normal;
+	border-radius:5px;
+	background:#000;
+	border:0;
+	color:white;
+	outline:0;
+	cursor:pointer;
+	margin-top:5px;
+	margin-bottom:50px;
+	font-size:18px;
+	font-family:tahoma;
+	transition:all 0.25s;
+	margin-left:20%;
+	z-index:10;
+	box-shadow:1px 2px 10px 3px rgba(0,0,0,0.5);
+	position:relative;
+	text-shadow:1px 2px 4px rgba(0,0,0,0.35);
+}
+
+#loginc button:before{
+	content:'';
+	position:absolute;
+	background:#fff;
+	top:0;
+	left:50%;
+	height:100%;
+	width:0;
+	border-radius:5px;
+	transition:all 0.25s;
+	z-index:-1;
+}
+#loginc button:hover:before{
+	width:100%;
+	left:0%;
+}
+#loginc button:hover{
+	color:black;
+}
+
+#hint{
+	font-family:calibri;
+	font-size:17px;
+	margin-left:15px;
+	margin-bottom:25px;
+}
+#hint a{
+	color:#1CB0DA;
+}
+#idpw{
+	transition:all 0.5s;
+	opacity:0;
+	color:#222;
+	font-style:italic;
+	cursor:default;
+}
+footer{
+	border:1px solid transparent;
+	background-color:#050505;
+}
+footer h1{
+	overflow:hidden;
+	text-align:center;
+	font-size:75px;
+	color:#fff;
+	letter-spacing:3px;
+	display:block;
+	font-family:wwh;
+	margin:25px 0 25px 0;
+}
+footer h2{
+	text-align:center;
+	color:#0B76F6;
+	font-size:45px;
+	font-family:disco;
+	letter-spacing:7px;
+	margin-bottom:15px;
+}
+footer p{
+	width:80%;
+	margin-left:10%;
+	color:#fff;
+	font-size:19px;
+	text-align:center;
+	line-height:25px;
+	font-family:calibri;
+	margin-bottom:25px;
+}
+#sicons{
+	display:flex;
+	justify-content:space-around;
+	width:40%;
+	margin-left:30%;
+	margin-bottom:20px;
+}
+#sicons a{
+	text-shadow:1px 1px 1px 1px black;
+	display:block;
+	width:50px;
+	height:50px;
+	border:2px solid #777;
+	font-size:25px;
+	color:#777;
+	border-radius:50%;
+}
+#sicons a:hover{
+	color:white;
+	border:2px solid white;
+}

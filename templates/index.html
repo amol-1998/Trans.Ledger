@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Trans.Ledger - Home</title>
+		<meta charset="UTF-8"/>
+		<meta name="creator" content="Amol Priyavardhan">
+		<meta name="what" content="movie recommender">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+		<link rel="shortcut icon" href="icon2.ico" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel= "stylesheet" type="text/css" href="../static/index.css"/>	
+		<script>
+			$(document).ready(function(){
+				$('#user').click(function(){
+					$('#dropdoptions').slideToggle(350);
+				});
+			});
+		</script>
+		
+		<script>
+			//Script to show and hide the hint for id/pwd.
+			function showhide(){
+				showidpw();	
+			}
+			function showidpw(){
+				var ele = document.getElementById('idpw');
+				ele.style.opacity = "1";
+				setTimeout(hideidpw, 1500);
+			}
+			function hideidpw(){
+				var ele = document.getElementById('idpw');
+				ele.style.opacity = "0";
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div class="fp" id="frontp">
+			<header>
+				<div class="lcont">
+					<a href="#"><img src="/static/logo.png"></a>
+					<h1>TRANS.LEDGER</h1>
+				</div>
+				<div class="rcont">
+					{% if user_logged_in %}
+					<a id="user" href="javascript:void(0);"> {{username}} <span class=" fa fa-angle-down"></span></a>					
+					{% else %}
+					<a href="#loginc">Login</a>
+					{% endif %}
+				</div>
+				{% if user_logged_in%}
+				<div id="dropdoptions">
+						<ul>
+							<li><a href="add_transaction">Add Transaction</a></li>
+							<li><a href="connect_node">Connect a Node</a></li>
+							<li><a href="get_transactions">View Transactions</a></li>
+							<li><a href="get_blockchain">View Blockchain</a></li>
+							<li><a href="logout" style="border-bottom:0;">Logout</a></li>
+						</ul>
+				</div>
+				{% endif %}
+				
+			</header>
+			<section class="hpc">
+				<aside class="mtc">
+					<h1>Let's Unleash the Beast into Real World</h1>
+				</aside>
+				<aside class="mic">
+					<img src="/static/mainimage.png"/>
+				</aside>
+			</section>
+		</div>
+		
+		<section id="qc">
+			<h1>Words of the Wise</h1>
+			<p><span class="fa fa-quote-left"></span> The root problem with conventional currency is all the trust that's required to make it work. The central bank must be trusted not to debase the currency, but the history of fiat currencies is full of breaches of that trust. Banks must be trusted to hold our money and transfer it electronically, but they lend it out in waves of credit bubbles with barely a fraction in reserve. We have to trust them with our privacy, trust them not to let identity thieves drain our accounts. <span class="fa fa-quote-right"></span></p>
+			<span id="qn">~ Satoshi Nakamoto</span>
+		</section>
+		
+		{% if not user_logged_in%}
+		<section id="loginc" class="fp">
+			<form method="POST" action="/" autocomplete="off">
+				<div>
+					<h1>LOGIN</h1>
+					<input type="text" name="username" placeholder="Username">
+					<input type="password" name="pwd" placeholder="Password">
+					<p id="error">
+						{% if error %}
+						<span>Username and Password Don't Match</span>
+						{% endif %}
+					<p>
+					<button type="submit">LOGIN</button>
+				</div>
+			</form>
+			<p id="hint"><a href="javascript:void(0);" onclick="showidpw();">What's the Username and Password?</a> <span id="idpw">The username and the Password are hidden somewhere in the Code. <b>Hint:</b> Username starts with "amol".</span></p>
+		</section>
+		{% endif %}
+		
+		<footer>
+			<h1>TRANS.LEDGER</h1>
+			<h2>About</h2>
+			<p>Trans.Ledger is an Immutable, Distributed and Decentralized Ledger for recording transactions of funding to political parties. Such a ledger ensure the security of the transactions and assures the donors that their donation amounts are the same as they transacted. And the major advantage of Blockchain Technology in this application is that the transactions of fundings are Public i.e. anyone can see Who donated, to Whom, and How much? Such a ledger can be seen by everyone but modified by none.</p>
+			<h2>Connect</h2>
+			<div id="sicons">
+					<a href="#" style="padding:12px 0px 0px  16px;"><span class="fa fa-facebook"></span></a>
+					<a href="#" style="padding:11px 0px 0px 13px;"><span class="fa fa-instagram"></span></a>
+					<a href="#" style="padding:12px 0px 0px 12px;"><span class="fa fa-twitter"></span></a>
+					<a href="#" style="padding:11px 0px 0px 13px;"><span class="fa fa-github"></span></a>
+			</div>
+		</footer>
+	
+	
+	
+	
+	
+		<!--
+		<header>
+			<div id="lcontent">
+				<img src="../static/logo.png" alt="TransLedger Logo"/>
+				<h1>Trans.Ledger</h1>
+			</div>
+		</header>
+        {%  if user_logged_in %}
+		<section>
+			<ul>
+				<li><a href="get_blockchain">View Blockchain</a></li>
+				<li><a href="connect_node">Add Node</a></li>
+				<li><a href="add_transaction">Add Transaction</a></li>
+			</ul>
+		</section>
+        {% else %}
+        <form method="POST" action="/">
+            <input type="text" name="username" placeholder="Username">
+            <input type="text" name="pwd" placeholder="Password">
+            {% if error %}
+                <p>Username and Password not Matching</p>
+            {% else %}
+                <p></p>
+            {% endif %}
+            <input type="submit" value="Submit">
+        </form>
+        {% endif %}
+		-->
+	</body>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
