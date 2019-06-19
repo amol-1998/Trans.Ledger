@@ -204,6 +204,10 @@ def add_transaction():
 #  This URL returns the blockchain of the node for consensus
 @web_app.route('/get_bc',methods=['GET'])
 def get_bc():
+    global user_logged_in
+    if user_logged_in is False:
+        return redirect(url_for('index'))
+    
     chain = blockchain.chain
     response = {'Blockchain':chain,
                 'Length': len(chain)}
